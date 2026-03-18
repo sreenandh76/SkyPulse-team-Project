@@ -3,15 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home - SkyPulse</title>
+  <title>Favorites - SkyPulse</title>
 
   <!-- Poppins font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<title>SkyPulse</title>
-
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -20,7 +15,6 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
 </head>
 
 <body class="font-poppins bg-orange-50 min-h-screen flex flex-col">
@@ -62,8 +56,24 @@
       </nav>
     </div>
   </header>
-<body class="font-poppins">
- <!-- Footer -->
+
+  <!-- Main Content -->
+  <main class="flex-grow">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+      <h2 class="text-3xl font-bold mb-2 text-gray-800">Favorite Cities</h2>
+      <p class="text-gray-600 mb-8">Your saved weather cities will appear here.</p>
+
+      <!-- Empty state -->
+      <div id="emptyMessage" class="hidden bg-white rounded-2xl shadow p-6 text-center text-gray-500">
+        No favorite cities yet.
+      </div>
+
+      <!-- Favorites Grid -->
+      <div id="favoritesContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </section>
+  </main>
+
+  <!-- Footer -->
   <footer class="bg-white mt-10 shadow-inner">
     <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
 
@@ -107,6 +117,5 @@
   </footer>
 
   <script src="./favorites.js"></script>
-
 </body>
 </html>

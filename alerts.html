@@ -1,11 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkyPulse</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alerts - SkyPulse</title>
+
+  <!-- Poppins font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="./output.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-<body>
-    
+
+<body class="font-poppins bg-orange-50 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <h1 class="text-2xl font-bold" style="color: rgb(240, 85, 19);">
+        SkyPulse
+      </h1>
+
+      <!-- Desktop Menu -->
+      <nav class="hidden md:flex items-center gap-6 font-medium text-gray-700">
+        <a href="./index.html" class="hover:text-orange-500">Home</a>
+        <a href="./search.html" class="hover:text-orange-500">Search</a>
+        <a href="./forecast.html" class="hover:text-orange-500">Forecast</a>
+        <a href="./air-quality.html" class="hover:text-orange-500">Air Quality</a>
+        <a href="./favorites.html" class="font-semibold" style="color: rgb(240, 85, 19);">Favorites</a>
+        <a href="./alerts.html" class="hover:text-orange-500">Alerts</a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="menuBtn" class="md:hidden text-2xl" style="color: rgb(240, 85, 19);">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden px-4 pb-4">
+      <nav class="flex flex-col gap-3 bg-orange-50 rounded-xl p-4 font-medium text-gray-700">
+        <a href="./index.html" class="hover:text-orange-500">Home</a>
+        <a href="./search.html" class="hover:text-orange-500">Search</a>
+        <a href="./forecast.html" class="hover:text-orange-500">Forecast</a>
+        <a href="./air-quality.html" class="hover:text-orange-500">Air Quality</a>
+        <a href="./favorites.html" class="font-semibold" style="color: rgb(240, 85, 19);">Favorites</a>
+        <a href="./alerts.html" class="hover:text-orange-500">Alerts</a>
+      </nav>
+    </div>
+  </header>
+<body class="font-poppins">
+ <!-- Footer -->
+  <footer class="bg-white mt-10 shadow-inner">
+    <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <div>
+        <h2 class="text-2xl font-bold mb-3" style="color: rgb(240, 85, 19);">
+          SkyPulse
+        </h2>
+        <p class="text-gray-600 text-sm">
+          SkyPulse helps you track weather updates, forecasts, and air quality
+          for your favorite cities.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold mb-3">Quick Links</h3>
+        <ul class="space-y-2 text-gray-600">
+          <li><a href="./index.html" class="hover:text-orange-500">Home</a></li>
+          <li><a href="./search.html" class="hover:text-orange-500">Search</a></li>
+          <li><a href="./forecast.html" class="hover:text-orange-500">Forecast</a></li>
+          <li><a href="./favorites.html" class="hover:text-orange-500">Favorites</a></li>
+          <li><a href="./alerts.html" class="hover:text-orange-500">Alerts</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold mb-3">Connect</h3>
+
+        <div class="flex gap-4 text-xl mb-4">
+          <a href="#" style="color: rgb(240, 85, 19);"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" style="color: rgb(240, 85, 19);"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" style="color: rgb(240, 85, 19);"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+
+        <p class="text-gray-600 text-sm">Email: support@skypulse.com</p>
+      </div>
+    </div>
+
+    <div class="border-t text-center py-4 text-sm text-gray-500">
+      © 2026 SkyPulse. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="./favorites.js"></script>
+
 </body>
 </html>
