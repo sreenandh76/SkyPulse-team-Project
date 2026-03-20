@@ -1,11 +1,108 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkyPulse</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alerts</title>
+
+  <!-- Tailwind CSS -->
+
+  <link href="./output.css" rel="stylesheet">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>
-    
+
+<body class="font-poppins bg-sky-200 min-h-screen p-4 md:p-6">
+
+  <!-- NAVBAR -->
+
+  <div class="bg-white p-3 rounded-xl shadow mb-6 flex justify-between items-center">
+
+  <h1 class="font-sans font-bold text-4xl text-orange-400">SkyPulse</h1>
+
+  <!-- Hamburger -->
+  <button id="menuBtn" class="md:hidden text-xl">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <!-- Desktop Menu -->
+  <div class="hidden md:flex gap-3 items-center text-sm md:text-xl font-light">
+    <a href="#">Home</a>
+    <a href="#">Search</a>
+    <a href="#">Forecast</a>
+    <a href="#">Air-Quality</a>
+    <a href="#">Favorites</a>
+    <a class="bg-blue-500 text-white px-3 py-1 rounded-full 1g:text-1g">Alerts</a>
+  </div>
+
+</div>
+<!-- Overlay -->
+<div id="overlay" class="fixed inset-0 bg-black/40 hidden z-40"></div>
+
+<!-- Side Menu -->
+<div id="sideMenu" class="fixed top-0 right-0 w-64 h-full bg-sky-200 shadow-lg transform translate-x-full transition duration-300 z-50 p-5">
+
+  <!-- Close button -->
+  <div class="flex justify-end mb-5">
+    <button id="closeBtn" class="text-xl">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
+
+  <!-- Menu items -->
+  <div class="flex flex-col gap-5 text-lg md:text-2xl">
+    <a href="#">Home</a>
+    <hr>
+    <a href="#">Search</a>
+    <hr>
+    <a href="#">Forecast</a>
+    <hr>
+    <a href="#">Air-Quality</a>
+    <hr>
+    <a href="#">Favorites</a>
+    <hr>
+    <a href="#">Alerts</a>
+  </div>
+
+</div>
+  <!-- CITY BOX -->
+
+  <div class="bg-white p-4 md:p-6 rounded-xl shadow mb-6 max-w-xl mx-auto">
+    <h2 class="font-bold mb-3 text-lg">Select City</h2>
+
+
+<div class="grid grid-cols-3 gap-3">
+
+  <button onclick="showWeather(event,'Chennai')" class="cityBtn bg-blue-200 px-4 py-2 rounded-lg">Chennai</button>
+  <button onclick="showWeather(event,'Delhi')" class="cityBtn bg-blue-200 px-4 py-2 rounded-lg">Delhi</button>
+  <button onclick="showWeather(event,'Mumbai')" class="cityBtn bg-blue-200 px-4 py-2 rounded-lg">Mumbai</button>
+
+  <button onclick="showWeather(event,'Bangalore')" class="cityBtn bg-blue-200 px-4 py-2 rounded-lg">Bangalore</button>
+  <button onclick="showWeather(event,'Hyderabad')" class="cityBtn bg-blue-200 px-4 py-2 rounded-lg">Hyderabad</button>
+  <button onclick="showWeather(event,'Kolkata')" class="cityBtn bg-blue-200 px-4 py-2 rounded-lg">Kolkata</button>
+
+</div>
+
+  </div>
+
+  <!-- ALERTS -->
+
+  <div id="alertsContainer" class="max-w-xl mx-auto space-y-4">
+
+<div class="bg-white p-4 rounded-xl shadow text-center text-gray-600">
+  Select a city to view alerts
+</div>
+
+  </div>
+
+  <!-- JS -->
+
+  <script src="alerts.js"></script>
+
 </body>
 </html>
