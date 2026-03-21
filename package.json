@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "alerts.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"}
+
+    "scripts": {
+  "dev": "npx tailwindcss -i ./input.css -o ./output.css --watch",
+  "build": "npx tailwindcss -i ./input.css -o ./output.css --minify"
+}
 ,
   "repository": {
     "type": "git",
