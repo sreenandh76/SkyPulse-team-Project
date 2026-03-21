@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "alerts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
 
     "scripts": {
   "dev": "npx tailwindcss -i ./input.css -o ./output.css --watch",
@@ -22,7 +25,11 @@
   },
   "homepage": "https://github.com/sreenandh76/SkyPulse-team-Project#readme",
   "dependencies": {
-    "@tailwindcss/cli": "^4.2.1",
-    "tailwindcss": "^4.2.1"
+    "@tailwindcss/cli": "^4.2.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.27",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.2"
   }
 }
