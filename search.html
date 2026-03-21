@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS -->
-  <link rel="stylesheet" href="./output.css" />
+  <link rel="stylesheet" href="./output.css">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -22,7 +23,7 @@
   <!-- Header -->
   <header class="bg-white shadow-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-      
+
       <!-- Logo -->
       <h1 class="text-2xl font-bold" style="color: rgb(240, 85, 19);">
         SkyPulse
@@ -31,10 +32,10 @@
       <!-- Desktop Menu -->
       <nav class="hidden md:flex items-center gap-6 font-medium text-gray-700">
         <a href="./index.html" class="hover:text-orange-500">Home</a>
-        <a href="./search.html" class="hover:text-orange-500">Search</a>
+        <a href="./search.html" class="font-semibold" style="color: rgb(240, 85, 19);">Search</a>
         <a href="./forecast.html" class="hover:text-orange-500">Forecast</a>
         <a href="./air-quality.html" class="hover:text-orange-500">Air Quality</a>
-        <a href="./favorites.html" class="font-semibold" style="color: rgb(240, 85, 19);">Favorites</a>
+        <a href="./favorites.html" class="hover:text-orange-500">Favorites</a>
         <a href="./alerts.html" class="hover:text-orange-500">Alerts</a>
       </nav>
 
@@ -48,60 +49,107 @@
     <div id="mobileMenu" class="hidden md:hidden px-4 pb-4">
       <nav class="flex flex-col gap-3 bg-orange-50 rounded-xl p-4 font-medium text-gray-700">
         <a href="./index.html" class="hover:text-orange-500">Home</a>
-        <a href="./search.html" class="hover:text-orange-500">Search</a>
+        <a href="./search.html" class="font-semibold" style="color: rgb(240, 85, 19);">Search</a>
         <a href="./forecast.html" class="hover:text-orange-500">Forecast</a>
         <a href="./air-quality.html" class="hover:text-orange-500">Air Quality</a>
-        <a href="./favorites.html" class="font-semibold" style="color: rgb(240, 85, 19);">Favorites</a>
+        <a href="./favorites.html" class="hover:text-orange-500">Favorites</a>
         <a href="./alerts.html" class="hover:text-orange-500">Alerts</a>
       </nav>
     </div>
   </header>
 
-   
- <!-- Footer -->
-  <footer class="bg-white mt-10 shadow-inner">
-    <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+  <!-- Search Bar -->
+  <div class="h-12 w-full bg-orange-50"></div>
 
-      <div>
-        <h2 class="text-2xl font-bold mb-3" style="color: rgb(240, 85, 19);">
-          SkyPulse
-        </h2>
-        <p class="text-gray-600 text-sm">
-          SkyPulse helps you track weather updates, forecasts, and air quality
-          for your favorite cities.
-        </p>
-      </div>
+  <main class="mx-auto max-w-7xl px-3 py-5 sm:px-5 sm:py-6">
+  <section class="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
+  <div>
+    <div class="rounded-3xl border border-orange-100 bg-white p-4 shadow-lg shadow-orange-100/40 sm:p-6">
+        <div class="flex flex-col gap-3 sm:flex-row">
+          <div class="relative flex-1">
+              <span class="pointer-events-none absolute inset-y-0 left-4 flex items-center text-orange-500">
+                <i class="fa-solid fa-location-dot text-base leading-none"></i>
+              </span>
+              <input type="text" id="cityInput" placeholder="Search city or district..."
+                class="w-full rounded-2xl border border-slate-200 bg-white py-3 pl-11 pr-4 text-sm text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-orange-400 focus:ring-4 focus:ring-red-100 sm:text-base" />
+              <div id="autocompleteList"
+                class="absolute left-0 right-0 top-full z-20 mt-2 hidden max-h-72 overflow-y-auto rounded-2xl border border-slate-200 bg-white p-2 shadow-xl">
+              </div>
+          </div>
 
-      <div>
-        <h3 class="text-lg font-semibold mb-3">Quick Links</h3>
-        <ul class="space-y-2 text-gray-600">
-          <li><a href="./index.html" class="hover:text-orange-500">Home</a></li>
-          <li><a href="./search.html" class="hover:text-orange-500">Search</a></li>
-          <li><a href="./forecast.html" class="hover:text-orange-500">Forecast</a></li>
-          <li><a href="./favorites.html" class="hover:text-orange-500">Favorites</a></li>
-          <li><a href="./alerts.html" class="hover:text-orange-500">Alerts</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="text-lg font-semibold mb-3">Connect</h3>
-
-        <div class="flex gap-4 text-xl mb-4">
-          <a href="#" style="color: rgb(240, 85, 19);"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#" style="color: rgb(240, 85, 19);"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" style="color: rgb(240, 85, 19);"><i class="fa-brands fa-twitter"></i></a>
+          <button id="searchBtn" type="button"
+            class="inline-flex min-w-30 items-center justify-center gap-2 rounded-2xl px-6 py-3 text-sm font-semibold text-black shadow-md transition focus:outline-none focus:ring-4 focus:ring-red-100 sm:text-base"
+            style="background-color: rgb(240, 85, 19);">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            Search
+          </button>
         </div>
 
-        <p class="text-gray-600 text-sm">Email: support@skypulse.com</p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <button type="button"
+            class="quick-city rounded-full bg-red-50 px-4 py-2 text-sm font-medium text-orange-700 transition hover:bg-red-100"
+            data-city="Hyderabad">Hyderabad</button>
+          <button type="button"
+            class="quick-city rounded-full bg-red-50 px-4 py-2 text-sm font-medium text-orange-700 transition hover:bg-red-100"
+            data-city="Mumbai">Mumbai</button>
+          <button type="button"
+            class="quick-city rounded-full bg-red-50 px-4 py-2 text-sm font-medium text-orange-700 transition hover:bg-red-100"
+            data-city="Chennai">Chennai</button>
+          <button type="button"
+            class="quick-city rounded-full bg-red-50 px-4 py-2 text-sm font-medium text-orange-700 transition hover:bg-red-100"
+            data-city="Bangalore">Bangalore</button>
+        </div>     
       </div>
+
+      <div id="result" class="hidden"></div>
     </div>
 
-    <div class="border-t text-center py-4 text-sm text-gray-500">
-      © 2026 SkyPulse. All rights reserved.
-    </div>
-  </footer>
+  <!-- Footer -->
+  <footer class="bg-white mt-10 shadow-inner">
+        <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
 
-  <script src="./favorites.js"></script>
+          <div>
+            <h2 class="text-2xl font-bold mb-3" style="color: rgb(240, 85, 19);">
+              SkyPulse
+            </h2>
+            <p class="text-gray-600 text-sm">
+              SkyPulse helps you track weather updates, forecasts, and air quality
+              for your favorite cities.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-3">Quick Links</h3>
+            <ul class="space-y-2 text-gray-600">
+              <li><a href="./index.html" class="hover:text-orange-500">Home</a></li>
+              <li><a href="./search.html" class="hover:text-orange-500">Search</a></li>
+              <li><a href="./forecast.html" class="hover:text-orange-500">Forecast</a></li>
+              <li><a href="./favorites.html" class="hover:text-orange-500">Favorites</a></li>
+              <li><a href="./alerts.html" class="hover:text-orange-500">Alerts</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-3">Connect</h3>
+
+            <div class="flex gap-4 text-xl mb-4">
+              <a href="#" style="color: rgb(240, 85, 19);"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#" style="color: rgb(240, 85, 19);"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" style="color: rgb(240, 85, 19);"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+
+            <p class="text-gray-600 text-sm">Email: support@skypulse.com</p>
+          </div>
+        </div>
+
+        <div class="border-t text-center py-4 text-sm text-gray-500">
+          © 2026 SkyPulse. All rights reserved.
+        </div>
+      </footer>
+
+      <script src="./search.js"></script>
+      <script src="./favorites.js"></script>
 
 </body>
+
 </html>
