@@ -6,6 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+
+    "scripts": {
+  "dev": "npx tailwindcss -i ./input.css -o ./output.css --watch",
+  "build": "npx tailwindcss -i ./input.css -o ./output.css --minify"
+}
+,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sreenandh76/SkyPulse-team-Project.git"

@@ -21,7 +21,7 @@
 
   <!-- Header -->
   <header class="bg-white shadow-md sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+    <div class="w-full px-4 sm:px-6 py-4 flex items-center justify-between">
       
       <!-- Logo -->
       <h1 class="text-2xl font-bold" style="color: rgb(240, 85, 19);">
@@ -34,8 +34,8 @@
         <a href="./search.html" class="hover:text-orange-500">Search</a>
         <a href="./forecast.html" class="hover:text-orange-500">Forecast</a>
         <a href="./air-quality.html" class="hover:text-orange-500">Air Quality</a>
-        <a href="./favorites.html" class="font-semibold" style="color: rgb(240, 85, 19);">Favorites</a>
-        <a href="./alerts.html" class="hover:text-orange-500">Alerts</a>
+        <a href="./favorites.html" class="hover:text-orange-500">Favorites</a>
+        <a href="./alerts.html" class="font-semibold" style="color: rgb(240, 85, 19);">Alerts</a>
       </nav>
 
       <!-- Mobile Menu Button -->
@@ -56,51 +56,254 @@
       </nav>
     </div>
   </header>
-<body class="font-poppins">
- <!-- Footer -->
-  <footer class="bg-white mt-10 shadow-inner">
-    <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
 
-      <div>
-        <h2 class="text-2xl font-bold mb-3" style="color: rgb(240, 85, 19);">
-          SkyPulse
-        </h2>
-        <p class="text-gray-600 text-sm">
-          SkyPulse helps you track weather updates, forecasts, and air quality
-          for your favorite cities.
-        </p>
-      </div>
+    <!-- CITY BOX -->
+<audio id="alertSound" src="alertsound sound.mp3"></audio>
+  <div class="bg-white p-4 md:p-6 rounded-xl shadow mb-6 mt-6 max-w-xl mx-auto">
+    <h2 class="font-bold mb-3 text-lg">Select City</h2>
 
-      <div>
-        <h3 class="text-lg font-semibold mb-3">Quick Links</h3>
-        <ul class="space-y-2 text-gray-600">
-          <li><a href="./index.html" class="hover:text-orange-500">Home</a></li>
-          <li><a href="./search.html" class="hover:text-orange-500">Search</a></li>
-          <li><a href="./forecast.html" class="hover:text-orange-500">Forecast</a></li>
-          <li><a href="./favorites.html" class="hover:text-orange-500">Favorites</a></li>
-          <li><a href="./alerts.html" class="hover:text-orange-500">Alerts</a></li>
-        </ul>
-      </div>
 
-      <div>
-        <h3 class="text-lg font-semibold mb-3">Connect</h3>
+<div class="grid grid-cols-3 gap-3">
 
-        <div class="flex gap-4 text-xl mb-4">
-          <a href="#" style="color: rgb(240, 85, 19);"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#" style="color: rgb(240, 85, 19);"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" style="color: rgb(240, 85, 19);"><i class="fa-brands fa-twitter"></i></a>
-        </div>
+  <button onclick="showWeather(event,'Chennai')" class="cityBtn bg-blue-200 px-4 py-2 rounded-lg hover:scale-105 transition">Chennai</button>
+  <button onclick="showWeather(event,'Delhi')" class="cityBtn bg-blue-200 px-4 py-2 rounded-lg hover:scale-105 transition">Delhi</button>
+  <button onclick="showWeather(event,'Mumbai')" class="cityBtn bg-blue-200 px-4 py-2 rounded-lg hover:scale-105 transition">Mumbai</button>
+  <button onclick="showWeather(event,'Bangalore')" class="cityBtn bg-blue-200 px-4 py-2 rounded-lg hover:scale-105 transition">Bangalore</button>
+  <button onclick="showWeather(event,'Hyderabad')" class="cityBtn bg-blue-200 px-4 py-2 rounded-lg hover:scale-105 transition">Hyderabad</button>
+  <button onclick="showWeather(event,'Kolkata')" class="cityBtn bg-blue-200 px-4 py-2 rounded-lg hover:scale-105 transition">Kolkata</button>
 
-        <p class="text-gray-600 text-sm">Email: support@skypulse.com</p>
-      </div>
+</div>
+
+  </div>
+
+  <!-- ALERTS -->
+  <div id="alertsContainer" class="max-w-xl mx-auto space-y-4">
+
+<div class="bg-white p-4 rounded-xl shadow text-center text-gray-600">
+  Select a city to view alerts
+</div>
+
+  </div>
+  <div class="flex flex-col md:flex-row gap-6 px-4 mt-6">
+
+  <!-- Emergency Contacts-->
+  <div class=" w-full md:w-84 bg-white p-5 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 hover:scale-105 transition">
+
+    <h2 class="text-xl font-bold mb-4">Weather & Emergency Help</h2>
+
+   <div class="flex justify-between items-center py-3 border-b cursor-pointer">
+  <div class="flex items-center gap-3">
+    <i class="fa-solid fa-truck-medical text-red-500"></i>
+    <span class="font-medium ">Ambulance - 108</span>
+  </div>
+  <i class="fa-solid fa-chevron-right text-gray-400"></i>
+</div>
+
+    <div class="flex justify-between items-center py-3 border-b">
+  <div class="flex items-center gap-3">
+    <i class="fa-solid fa-fire text-orange-500"></i>
+    <span class="font-medium">Fire - 101</span>
+  </div>
+  <i class="fa-solid fa-chevron-right text-gray-400"></i>
+</div>
+
+    <div class="flex justify-between items-center py-3 border-b">
+  <div class="flex items-center gap-3">
+    <i class="fa-solid fa-shield-halved text-gray-600"></i>
+    <span class="font-medium">Police - 100</span>
+  </div>
+  <i class="fa-solid fa-chevron-right text-gray-400"></i>
+</div>
+<div class="flex justify-between items-center py-3 border-b">
+  <div class="flex items-center gap-3">
+    <i class="fa-solid fa-cloud-sun text-blue-500"></i>
+    <span class="font-medium">Weather Info- 1800-180-1717</span>
+  </div>
+  <i class="fa-solid fa-chevron-right text-gray-400"></i>
+</div>
+<div class="flex justify-between items-center py-3">
+  <div class="flex items-center gap-3">
+    <i class="fa-solid fa-triangle-exclamation text-yellow-500"></i>
+    <span class="font-medium">Relief Commissioner – 1077</span>
+  </div>
+  <i class="fa-solid fa-chevron-right text-gray-400"></i>
+</div>
+  </div>
+  <!-- Weather Alerts -->
+  <div class="w-full md:w-150 bg-white p-5 rounded-2xl shadow-lg  hover:shadow-2xl transition duration-300 hover:scale-105 transition">
+    <h2 class="text-lg font-bold mb-3">Get Weather Alerts</h2>
+
+    <p class="text-sm text-gray-600 mb-4">
+      Enter your email or phone number with city to receive alerts. <br>   We respect your privacy. Your details are safe and protected.
+    </p>
+    <input type="email" 
+      id="email"
+      placeholder="Email"
+      class="w-full p-2 border rounded mb-3">
+
+    <input type="tel" 
+      id="phone"
+      placeholder="(+91) Phone Number"
+      class="w-full p-2 border rounded mb-3">
+          <input type="email" 
+      id="city"
+      placeholder="Your City"
+      class="w-full p-2 border rounded mb-3">
+
+
+    <button onclick="subscribe()" 
+      class="w-full bg-orange-500 text-white p-2 rounded">
+      Get Alerts
+    </button>
+
+    <p id="msg" class="text-sm mt-3 text-center"></p>
+
+  </div>
+<!-- Weather News -->
+<div class="w-full md:w-84 bg-white p-5 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 hover:scale-105 transition">
+
+  <h2 class="text-xl font-bold mb-4">Weather News</h2>
+
+  <div class="flex justify-between items-center py-3 border-b">
+    <span class="text-sm">🌧️ Heavy Rain Alert in Chennai</span>
+    <i class="fa-solid fa-chevron-right text-gray-400"></i>
+  </div>
+
+  <div class="flex justify-between items-center py-3 border-b">
+    <span class="text-sm">🔥 Heatwave Hits Delhi</span>
+    <i class="fa-solid fa-chevron-right text-gray-400"></i>
+  </div>
+
+  <div class="flex justify-between items-center py-3 border-b">
+    <span class="text-sm">🌪️ Cyclone Warning Issued</span>
+    <i class="fa-solid fa-chevron-right text-gray-400"></i>
+  </div>
+
+  <div class="flex justify-between items-center py-3 border-b">
+    <span class="text-sm">🌫️ Air Quality Drops in Mumbai</span>
+    <i class="fa-solid fa-chevron-right text-gray-400"></i>
+  </div>
+
+  <div class="flex justify-between items-center py-3 border-b">
+    <span class="text-sm">⛈️ Thunderstorm in Bangalore</span>
+    <i class="fa-solid fa-chevron-right text-gray-400"></i>
+  </div>
+
+  <div class="flex justify-between items-center py-3">
+    <span class="text-sm">🌊 Flood Risk in Coastal Areas</span>
+    <i class="fa-solid fa-chevron-right text-gray-400"></i>
+  </div>
+
+</div>
+<div class="bg-white p-6  md:col-span-2 rounded-2xl shadow-lg hover:shadow-2xl transition duration-300 hover:scale-105 transition">
+
+  <h3 class="text-lg font-semibold mb-3"> Alert Source</h3>
+
+  <p class="text-sm text-gray-600 mb-4 ">
+    This alert is issued by official government weather authorities and verified for accuracy.
+  </p>
+
+  <div class="grid grid-cols-2 gap-4 text-sm">
+
+    <div>
+      <p class="text-gray-500">Source</p>
+      <p class="font-semibold">IMD</p>
     </div>
 
-    <div class="border-t text-center py-4 text-sm text-gray-500">
-      © 2026 SkyPulse. All rights reserved.
+    <div>
+      <p class="text-gray-500">Status</p>
+      <p class="text-green-500 font-semibold">Verified ✓</p>
     </div>
-  </footer>
 
-  <script src="./favorites.js"></script>
+    <div>
+      <p class="text-gray-500">Last Update</p>
+      <p>10 mins ago</p>
+    </div>
+
+    <div>
+      <p class="text-gray-500">Reliability</p>
+      <p class="text-orange-500 font-semibold">High</p>
+    </div>
+   <div>
+      <p class="text-gray-500">Affected Region</p>
+      <p>India</p>
+    </div>
+
+    <div>
+      <p class="text-gray-500">Issued By</p>
+      <p class="font-extralight">India Meteorological Dept.</p>
+    </div>
+    <div>
+  <p class="text-gray-500">Alert Level</p>
+  <p class="font-semibold text-orange-500">Moderate</p>
+</div>
+
+<div>
+  <p class="text-gray-500">Alert Category</p>
+  <p class="font-semibold">Weather</p>
+</div>
+  </div>
+
+</div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-white mt-10 shadow-inner">
+
+  <!-- MAIN CONTAINER -->
+  <div class="w-full px-6 lg:px-20 py-10 
+              flex flex-col md:flex-row 
+              md:justify-between items-center md:items-start 
+              gap-10">
+
+    <!-- LEFT -->
+    <div class="flex flex-col items-center md:items-start text-center md:text-left md:w-1/3">
+      <h2 class="text-2xl font-bold mb-3" style="color: rgb(240, 85, 19);">
+        SkyPulse
+      </h2>
+      <p class="text-gray-600 text-sm">
+        SkyPulse helps you track weather updates,<br>
+        forecasts, and air quality for your<br>
+        favorite cities.
+      </p>
+    </div>
+
+    <!-- CENTER -->
+    <div class="flex flex-col items-center text-center md:w-1/3">
+      <h3 class="text-lg font-semibold mb-3">Quick Links</h3>
+      <ul class="space-y-2 text-gray-600">
+        <li><a href="./index.html" class="hover:text-orange-500">Home</a></li>
+        <li><a href="./search.html" class="hover:text-orange-500">Search</a></li>
+        <li><a href="./forecast.html" class="hover:text-orange-500">Forecast</a></li>
+        <li><a href="./favorites.html" class="hover:text-orange-500">Favorites</a></li>
+        <li><a href="./alerts.html" class="hover:text-orange-500">Alerts</a></li>
+      </ul>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="flex flex-col items-center md:items-end text-center md:text-right w-full md:w-1/3">
+      <h3 class="text-lg font-semibold mb-3">Connect</h3>
+
+      <div class="flex gap-4 text-xl mb-4 justify-center md:justify-end w-full">
+        <i class="fa-brands fa-facebook" style="color: rgb(240, 85, 19);"></i>
+        <i class="fa-brands fa-instagram" style="color: rgb(240, 85, 19);"></i>
+        <i class="fa-brands fa-twitter" style="color: rgb(240, 85, 19);"></i>
+      </div>
+
+      <p class="text-gray-600 text-sm text-center md:text-right">
+        Email: support@skypulse.com
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Bottom -->
+  <div class="border-t text-center py-4 text-sm text-gray-500">
+    © 2026 SkyPulse. All rights reserved.
+  </div>
+
+</footer>
+  <script src="./alerts.js"></script>
 
 </body>
 </html>

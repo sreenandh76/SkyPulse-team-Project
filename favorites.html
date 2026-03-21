@@ -73,48 +73,56 @@
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="bg-white mt-10 shadow-inner">
-    <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+<footer class="bg-white mt-10 shadow-inner">
+  <div class="w-full px-6 lg:px-20 py-10 
+              flex flex-col md:flex-row 
+              justify-between items-start gap-8">
 
-      <div>
-        <h2 class="text-2xl font-bold mb-3" style="color: rgb(240, 85, 19);">
-          SkyPulse
-        </h2>
-        <p class="text-gray-600 text-sm">
-          SkyPulse helps you track weather updates, forecasts, and air quality
-          for your favorite cities.
-        </p>
-      </div>
-
-      <div>
-        <h3 class="text-lg font-semibold mb-3">Quick Links</h3>
-        <ul class="space-y-2 text-gray-600">
-          <li><a href="./index.html" class="hover:text-orange-500">Home</a></li>
-          <li><a href="./search.html" class="hover:text-orange-500">Search</a></li>
-          <li><a href="./forecast.html" class="hover:text-orange-500">Forecast</a></li>
-          <li><a href="./favorites.html" class="hover:text-orange-500">Favorites</a></li>
-          <li><a href="./alerts.html" class="hover:text-orange-500">Alerts</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="text-lg font-semibold mb-3">Connect</h3>
-
-        <div class="flex gap-4 text-xl mb-4">
-          <a href="#" style="color: rgb(240, 85, 19);"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#" style="color: rgb(240, 85, 19);"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" style="color: rgb(240, 85, 19);"><i class="fa-brands fa-twitter"></i></a>
-        </div>
-
-        <p class="text-gray-600 text-sm">Email: support@skypulse.com</p>
-      </div>
+    <!-- LEFT -->
+    <div class="flex flex-col items-start">
+      <h2 class="text-2xl font-bold mb-3" style="color: rgb(240, 85, 19);">
+        SkyPulse
+      </h2>
+      <p class="text-gray-600 text-sm">
+        SkyPulse helps you track weather updates,<br>
+        forecasts, and air quality for your<br>
+        favorite cities.
+      </p>
     </div>
 
-    <div class="border-t text-center py-4 text-sm text-gray-500">
-      © 2026 SkyPulse. All rights reserved.
+    <!-- CENTER -->
+    <div class="flex flex-col items-center">
+      <h3 class="text-lg font-semibold mb-3">Quick Links</h3>
+      <ul class="space-y-2 text-gray-600 text-center">
+        <li><a href="./index.html" class="hover:text-orange-500">Home</a></li>
+        <li><a href="./search.html" class="hover:text-orange-500">Search</a></li>
+        <li><a href="./forecast.html" class="hover:text-orange-500">Forecast</a></li>
+        <li><a href="./favorites.html" class="hover:text-orange-500">Favorites</a></li>
+        <li><a href="./alerts.html" class="hover:text-orange-500">Alerts</a></li>
+      </ul>
     </div>
-  </footer>
+
+    <!-- RIGHT -->
+    <div class="flex flex-col items-end text-right">
+      <h3 class="text-lg font-semibold mb-3">Connect</h3>
+
+      <div class="flex gap-4 text-xl mb-4">
+        <i class="fa-brands fa-facebook" style="color: rgb(240, 85, 19);"></i>
+        <i class="fa-brands fa-instagram" style="color: rgb(240, 85, 19);"></i>
+        <i class="fa-brands fa-twitter" style="color: rgb(240, 85, 19);"></i>
+      </div>
+
+      <p class="text-gray-600 text-sm">
+        Email: support@skypulse.com
+      </p>
+    </div>
+
+  </div>
+
+  <div class="border-t text-center py-4 text-sm text-gray-500">
+    © 2026 SkyPulse. All rights reserved.
+  </div>
+</footer>
 
   <script src="./favorites.js"></script>
 </body>
